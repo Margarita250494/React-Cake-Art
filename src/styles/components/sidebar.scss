@@ -1,0 +1,51 @@
+@use "../variables.scss" as *;
+@use "../helpers" as *;
+
+
+.sidebar{
+    position: relative;
+
+    &__menu{
+        position: fixed;
+        padding: rem(10) ;
+        @include flex-column-between;
+        height: 100%;
+        width: rem(300);
+    }
+
+    &-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        
+    }
+
+    &__menu-list{
+        border: 1px solid black;
+        
+
+    }
+    &__contacts{
+        border: 1px solid black;
+        height: 100%;
+        display: grid;
+        grid-template-rows: rem(100) 1fr;
+
+        &-heading{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+        &-link{
+            display: flex;
+            column-gap: rem(10);
+        }
+        
+    }
+    
+    &__contacts-list{
+        border: 1px solid red;
+        
+    }
+}

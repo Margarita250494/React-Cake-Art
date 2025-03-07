@@ -1,0 +1,138 @@
+@use 'variables' as *;
+
+@-webkit-keyframes open {
+    0% {
+        background-color: $hover-color;
+        top: 0;
+        height: 32px;
+    }
+    10% {
+        top: 0;
+        height: 32px;
+        background-color: $text-color;
+    }
+    30% {
+        top: 32px;
+        height: 0;
+        background-color: $text-color;
+    }
+    31% {
+        top: 0;
+        background-color: $text-color;
+    }
+    50% {
+        top: 0;
+        height: 32px;
+        background-color: $text-color;
+    }
+    100% {
+        top: 0;
+        height: 32px;
+        background-color: $hover-color;
+    }
+}
+
+@keyframes open {
+    0% {
+        background-color: $hover-color;
+        top: 0;
+        height: 32px;
+    }
+    10% {
+        top: 0;
+        height: 32px;
+        background-color: $text-color;
+    }
+    30% {
+        top: 32px;
+        height: 0;
+        background-color: $text-color;
+    }
+    31% {
+        top: 0;
+        background-color: $text-color;
+    }
+    50% {
+        top: 0;
+        height: 32px;
+        background-color: $text-color;
+    }
+    100% {
+        top: 0;
+        height: 32px;
+        background-color: $hover-color;
+    }
+}
+
+@-webkit-keyframes close-first {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        background-color: $hover-color;
+    }
+    50% {
+        -webkit-transform: rotate(-25deg);
+        transform: rotate(-25deg);
+        background-color: $text-color;
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        background-color: $hover-color;
+    }
+}
+
+@keyframes close-first {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        background-color: $hover-color;
+    }
+    50% {
+        -webkit-transform: rotate(-25deg);
+        transform: rotate(-25deg);
+        background-color: $text-color;
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        background-color: $hover-color;
+    }
+}
+
+@-webkit-keyframes close-second {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        background-color: $hover-color;
+    }
+    50% {
+        -webkit-transform: rotate(25deg);
+        transform: rotate(25deg);
+        background-color: $text-color;
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        background-color: $hover-color;
+    }
+}
+
+@keyframes close-second {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        background-color: $hover-color;
+    }
+    50% {
+        -webkit-transform: rotate(25deg);
+        transform: rotate(25deg);
+        background-color: $text-color;
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        background-color: $hover-color;
+    }
+}
+

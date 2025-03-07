@@ -1,0 +1,11 @@
+@use 'helpers' as *;
+
+.visually-hidden{
+    @include visually-hidden;
+}
+
+.hidden-mobile{
+    @include mobile{
+        display: none !important;
+    }
+}
