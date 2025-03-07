@@ -1,13 +1,21 @@
 import { LanguageButtons, MenuButton } from "@/components/index";
+import { NavLink } from "react-router-dom";
 
-export const Header = () => {
+type ButtonProps = {
+  toggleSidebar: () => void;
+  closeMenu: () => void;
+};
+
+export const Header = ({ toggleSidebar, closeMenu }: ButtonProps) => {
   return (
     <header className="header">
       <div className="header__container">
-        <div className="header__logo">Valerii Lindstrem</div>
+        <NavLink to="/" className="header__logo" onClick={closeMenu}>
+          Valerii Lindstrem
+        </NavLink>
         <LanguageButtons />
         <div className="header__menu-button">
-          <MenuButton />
+          <MenuButton toggleSidebar={toggleSidebar} />
         </div>
       </div>
     </header>

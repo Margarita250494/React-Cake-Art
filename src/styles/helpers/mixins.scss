@@ -56,3 +56,39 @@
     clip: rect(0 0 0 0) !important;
     overflow: hidden !important;
 }
+
+@mixin HoverEffect($text-color, $icon-color) {
+    cursor: pointer;
+    position: relative;
+  
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      height: 0%;
+      width: 1px;
+      left: 50%;
+      top: 50%;
+      background: $text-color;
+      transition: height 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+  
+    &::before {
+      top: -2.5px;
+    }
+  
+    &::after {
+      top: 2.5px;
+      background: $icon-color;
+    }
+  
+    &:hover::after {
+      background: transparent;
+      height: 100%;
+    }
+  
+    &:hover::before {
+      background: $text-color;
+      height: 100%;
+    }
+  }

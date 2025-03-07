@@ -4,30 +4,66 @@
 
 .sidebar{
     position: relative;
-
+    letter-spacing: rem(2);
+    transition-duration: 0.5s;
+    &.sidebar-close {
+        @include hide(); 
+        transition-duration: 0.5s;
+        transform: translateX(-200px)
+    }
+    &.sidebar-open {
+        
+        visibility: visible;
+        opacity: 1;  
+        transition-duration: 0.5s;
+        transform: translateX(0%);
+    }
     &__menu{
         position: fixed;
         padding: rem(10) ;
         @include flex-column-between;
         height: 100%;
-        width: rem(300);
+        width: rem(400);
+        transition-duration: 0.5s;
+        @include mobile-s{
+            width: rem(300);
+        }
+
+        &-link{
+            position: relative;
+            display: inline-block;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 1px;
+                bottom: 0;
+                left: 0;
+                background-color: $accent-color;
+                transition-duration: $transition-duration;
+                transform-origin: bottom center;
+            }
+            &:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom center;
+            }
+        }
+        
     }
 
     &-list{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        gap: rem(50);
         height: 100%;
         
     }
-
-    &__menu-list{
-        border: 1px solid black;
-        
-
-    }
+    
     &__contacts{
-        border: 1px solid black;
+        border-top: 1px solid $icon-color;
+        width: 100%;
         height: 100%;
         display: grid;
         grid-template-rows: rem(100) 1fr;
@@ -35,17 +71,38 @@
         &-heading{
             display: flex;
             justify-content: start;
-            align-items: center;
+            align-items: end;
         }
         &-link{
             display: flex;
             column-gap: rem(10);
+            &:hover{
+                color: $accent-color;
+            }
+            
+
+            span{
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    background-color: $accent-color;
+                    transform: scaleX(0);
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    right: -20px;
+                    top: 50%;
+                    transition-duration: $transition-duration;
+                }
+                &:hover::after{
+                    transform: scaleX(1);
+                }
+            }
+            
         }
         
     }
     
-    &__contacts-list{
-        border: 1px solid red;
-        
-    }
+    
 }

@@ -1,24 +1,44 @@
 import { RiAtLine, RiTelegramLine, RiWhatsappLine } from "@remixicon/react";
+import { NavLink } from "react-router-dom";
 
-export const Menu = () => {
+type MenuProps = {
+  isSidebarOpen: boolean;
+  setMenuIsVisible: () => void;
+};
+
+export const Menu = ({ isSidebarOpen, setMenuIsVisible }: MenuProps) => {
   return (
-    <aside className="sidebar">
+    <aside
+      className={`sidebar ${isSidebarOpen ? "sidebar-open" : "sidebar-close"}`}
+    >
       <nav className="sidebar__menu" aria-label="Menu Navigation">
         <ul className="sidebar__menu-list sidebar-list">
           <li className="sidebar__menu-item">
-            <a href="" className="sidebar__menu-link h1">
-              Home
-            </a>
+            <NavLink
+              to="/about"
+              className="sidebar__menu-link h1"
+              onClick={setMenuIsVisible}
+            >
+              About
+            </NavLink>
           </li>
           <li className="sidebar__menu-item">
-            <a href="" className="sidebar__menu-link h1">
+            <NavLink
+              to="/services"
+              className="sidebar__menu-link h1"
+              onClick={setMenuIsVisible}
+            >
               Services
-            </a>
+            </NavLink>
           </li>
           <li className="sidebar__menu-item">
-            <a href="" className="sidebar__menu-link h1">
-              Online-Shop
-            </a>
+            <NavLink
+              to="/portfolio"
+              className="sidebar__menu-link h1"
+              onClick={setMenuIsVisible}
+            >
+              Portfolio
+            </NavLink>
           </li>
         </ul>
         <div className="sidebar__contacts">
